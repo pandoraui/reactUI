@@ -1822,7 +1822,7 @@ var GridDoc = React.createClass({
 module.exports = GridDoc;
 
 },{"../ReactBin":1,"../utils":95,"./01-intro.md":39,"react":313}],41:[function(require,module,exports){
-module.exports = "<p><code>&lt;Header&gt;</code> 组件，页面头部。</p>\n<p>属性：</p>\n<ul>\n<li><code>theme</code>: <code>string</code> - 主题名称</li>\n<li><code>data</code>: <code>array</code> - 左右厕链接数据</li>\n<li><code>title</code>: <code>string</code> - 标题</li>\n<li><code>link</code>: <code>string</code> - 链接</li>\n<li><p><code>onSelect</code>: <code>func</code> - 链接点击处理函数，默认为 <code>function(){}</code>，接受两个参数：</p>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> handleClick = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nav, e</span>) </span>{\n<span class=\"hljs-comment\">// nav: object, 包含点击链接的相关数据</span>\n<span class=\"hljs-comment\">// e: 事件对象</span>\n}</code></pre></div></li>\n</ul>\n<p>数据格式：</p>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> data = {\n  <span class=\"hljs-string\">\"left\"</span>: [\n    {\n      <span class=\"hljs-string\">\"link\"</span>: <span class=\"hljs-string\">\"\"</span>,         <span class=\"hljs-comment\">// url : http://<span class=\"hljs-label\">xxx.xxx.xxx</span></span>\n      <span class=\"hljs-string\">\"title\"</span>: <span class=\"hljs-string\">\"\"</span>,        <span class=\"hljs-comment\">// 链接标题</span>\n      <span class=\"hljs-string\">\"icon\"</span>: <span class=\"hljs-string\">\"\"</span>,         <span class=\"hljs-comment\">// 字体图标名称: 使用 Amaze UI 字体图标 http://www.amazeui.org/css/icon</span>\n      <span class=\"hljs-string\">\"customIcon\"</span>: <span class=\"hljs-string\">\"\"</span>    <span class=\"hljs-comment\">// 自定义图标 URL，设置此项后当前链接不再显示 icon</span>\n    }\n  ],\n\n  <span class=\"hljs-string\">\"right\"</span>: [ <span class=\"hljs-comment\">// 右侧字段含义同左侧</span>\n    {\n      <span class=\"hljs-string\">\"link\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"title\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"icon\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"customIcon\"</span>: <span class=\"hljs-string\">\"\"</span>\n    }\n  ]\n};</code></pre></div>";
+module.exports = "<p><code>&lt;Header&gt;</code> 组件，页面头部。</p>\n<p>属性：</p>\n<ul>\n<li><code>theme</code>: <code>string</code> - 主题名称</li>\n<li><code>data</code>: <code>array</code> - 左右厕链接数据</li>\n<li><code>title</code>: <code>string</code> - 标题</li>\n<li><code>link</code>: <code>string</code> - 链接</li>\n<li><p><code>onSelect</code>: <code>func</code> - 链接点击处理函数，默认为 <code>function(){}</code>，接受两个参数：</p>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> handleClick = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nav, e</span>) </span>{\n<span class=\"hljs-comment\">// nav: object, 包含点击链接的相关数据</span>\n<span class=\"hljs-comment\">// e: 事件对象</span>\n}</code></pre></div></li>\n</ul>\n<p>数据格式：</p>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> data = {\n  <span class=\"hljs-string\">\"left\"</span>: [\n    {\n      <span class=\"hljs-string\">\"link\"</span>: <span class=\"hljs-string\">\"\"</span>,         <span class=\"hljs-comment\">// url : http://<span class=\"hljs-doctag\"><span class=\"hljs-keyword\">xxx</span>.</span><span class=\"hljs-doctag\"><span class=\"hljs-keyword\">xxx</span>.</span><span class=\"hljs-doctag\"><span class=\"hljs-keyword\">xxx</span></span></span>\n      <span class=\"hljs-string\">\"title\"</span>: <span class=\"hljs-string\">\"\"</span>,        <span class=\"hljs-comment\">// 链接标题</span>\n      <span class=\"hljs-string\">\"icon\"</span>: <span class=\"hljs-string\">\"\"</span>,         <span class=\"hljs-comment\">// 字体图标名称: 使用 Amaze UI 字体图标 http://www.amazeui.org/css/icon</span>\n      <span class=\"hljs-string\">\"customIcon\"</span>: <span class=\"hljs-string\">\"\"</span>    <span class=\"hljs-comment\">// 自定义图标 URL，设置此项后当前链接不再显示 icon</span>\n    }\n  ],\n\n  <span class=\"hljs-string\">\"right\"</span>: [ <span class=\"hljs-comment\">// 右侧字段含义同左侧</span>\n    {\n      <span class=\"hljs-string\">\"link\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"title\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"icon\"</span>: <span class=\"hljs-string\">\"\"</span>,\n      <span class=\"hljs-string\">\"customIcon\"</span>: <span class=\"hljs-string\">\"\"</span>\n    }\n  ]\n};</code></pre></div>";
 },{}],42:[function(require,module,exports){
 'use strict';
 
@@ -4290,8 +4290,8 @@ var DocHeader = React.createClass({
               null,
               React.createElement(
                 'a',
-                { href: './' },
-                'Zepto 版'
+                { href: './', target: '_blank' },
+                'Zepto.js'
               )
             )
           )
@@ -4986,7 +4986,7 @@ module.exports = [{
 }];
 
 },{}],108:[function(require,module,exports){
-module.exports = "<h2 id=\"-\">前期准备</h2>\n<h3 id=\"-react\">学习 React</h3>\n<p>Amaze UI React 基于 React.js 开发，如果你没有使用过 React，请先访问 <a href=\"https://facebook.github.io/react/index.html\">React 官网</a>学习。</p>\n<h3 id=\"-amaze-ui-\">了解 Amaze UI 基础样式</h3>\n<p><strong>Amaze UI React 与 <a href=\"https://github.com/allmobilize/amazeui\">Amaze UI (jQuery 版) v2.4+</a> 共用 CSS</strong>，如果你以前没有接触过 Amaze UI，请先<a href=\"http://amazeui.org/css?_ver=2.x\">点击此查看以下内容</a>：</p>\n<ul>\n<li><a href=\"http://amazeui.org/css/normalize?_ver=2.x\">样式统一</a></li>\n<li><a href=\"http://amazeui.org/css/base?_ver=2.x\">基础设置</a></li>\n<li><a href=\"http://amazeui.org/css/typography?_ver=2.x\">文字排版</a></li>\n</ul>\n<h2 id=\"-amaze-ui-react\">获取 Amaze UI React</h2>\n<h3 id=\"-\">下载</h3>\n<div class=\"am-g\"><div class=\"am-u-md-8 am-u-md-centered\"><a id=\"doc-dl-btn\" href=\"http://amazeui.org/download?branch=react&ver=1.0.0-beta1\" class=\"am-btn am-btn-block am-btn-secondary am-btn-lg\" target=\"_blank\"><i class=\"am-icon-download\"></i> Amaze UI React v1.0.0-beta1</a></div></div>\n\n<h3 id=\"-\">包管理工具</h3>\n<h4 id=\"npm\">NPM</h4>\n<div class=\"doc-highlight\"><pre><code class=\"\">npm <span class=\"hljs-keyword\">install</span> amazeui-react</code></pre></div><h4 id=\"bower\">Bower</h4>\n<div class=\"doc-highlight\"><pre><code class=\"\"><span class=\"hljs-keyword\">bower </span>install amazeui-react</code></pre></div><h3 id=\"cdn\">CDN</h3>\n<div class=\"doc-highlight\"><pre><code class=\"\"><span class=\"hljs-label\">http:</span>//cdn.amazeui<span class=\"hljs-preprocessor\">.org</span>/amazeui-react/1.0.0-beta1/amazeui.react.js\n<span class=\"hljs-label\">http:</span>//cdn.amazeui<span class=\"hljs-preprocessor\">.org</span>/amazeui-react/1.0.0-beta1/amazeui.react.min.js</code></pre></div><h3 id=\"-\">获取源代码</h3>\n<p>Amaze UI React 源代码托管在 GitHub 上，你可以点击下面的按钮获取。为了帮助我们更好的发展，请不吝献出你的 Star。</p>\n<iframe src=\"https://ghbtns.com/github-btn.html?user=amazeui&repo=amazeui-react&type=star&count=true&size=large\" frameborder=\"0\" scrolling=\"0\" width=\"160px\" height=\"30px\"></iframe>\n\n\n<h2 id=\"-\">页面配置</h2>\n<h3 id=\"html-\">HTML 模板</h3>\n<div class=\"doc-highlight\"><pre><code class=\"xml\"><span class=\"hljs-doctype\">&lt;!DOCTYPE html&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">html</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">head</span> <span class=\"hljs-attribute\">lang</span>=<span class=\"hljs-value\">\"zh-cn\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">charset</span>=<span class=\"hljs-value\">\"utf-8\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">http-equiv</span>=<span class=\"hljs-value\">\"X-UA-Compatible\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"IE=edge\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"description\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"keywords\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"viewport\"</span>\n        <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">title</span>&gt;</span>Amaze UI React<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">title</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"renderer\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"webkit\"</span>&gt;</span>\n  <span class=\"hljs-comment\">&lt;!-- No Baidu Siteapp--&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">http-equiv</span>=<span class=\"hljs-value\">\"Cache-Control\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"no-siteapp\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"alternate icon\"</span> <span class=\"hljs-attribute\">type</span>=<span class=\"hljs-value\">\"image/png\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"i/favicon.png\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"apple-touch-icon-precomposed\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"i/app-icon72x72@2x.png\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-title\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"AMUI React\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-capable\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"yes\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-status-bar-style\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"black\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"stylesheet\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/amazeui/2.4.0/css/amazeui.min.css\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/react/0.13.3/react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"path/to/amazeui.react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">head</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">body</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">body</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">html</span>&gt;</span></code></pre></div><h3 id=\"-\">组件调用方式</h3>\n<h4 id=\"commonjs\">CommonJS</h4>\n<p>推荐使用 CommonJS 方式开发 React 应用，具体参考 <strong><a href=\"https://github.com/amazeui/react-starter-kit\">Amaze UI React Starter Kit</a></strong></p>\n<div class=\"doc-highlight\"><pre><code class=\"\">npm <span class=\"hljs-keyword\">install</span> amazeui-react</code></pre></div><div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> React = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'react'</span>);\n<span class=\"hljs-keyword\">var</span> AMUIReact = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'amazeui-react'</span>);\n<span class=\"hljs-keyword\">var</span> Button = AMUIReact.Button;\n\nReact.render(<span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">Button</span>&gt;</span>Button<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">Button</span>&gt;</span>, mountNode);</span></code></pre></div><h4 id=\"-\">全局方式</h4>\n<div class=\"doc-highlight\"><pre><code class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/react/0.13.3/react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"path/to/amazeui.react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span>&gt;</span><span class=\"actionscript\">\n  <span class=\"hljs-keyword\">var</span> Button = AMUIReact.Button;\n</span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span></code></pre></div><h4 id=\"amd\">AMD</h4>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\">define([<span class=\"hljs-string\">'amazeui-react'</span>], <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">AMUIReact</span>)</span>{\n  <span class=\"hljs-keyword\">var</span> Button = AMUIReact.Button;\n  <span class=\"hljs-comment\">// do...</span>\n});</code></pre></div>";
+module.exports = "<h2 id=\"-\">前期准备</h2>\n<h3 id=\"-react\">学习 React</h3>\n<p>Amaze UI React 基于 React.js 开发，如果你没有使用过 React，请先访问 <a href=\"https://facebook.github.io/react/index.html\">React 官网</a>学习。</p>\n<h3 id=\"-amaze-ui-\">了解 Amaze UI 基础样式</h3>\n<p><strong>Amaze UI React 与 <a href=\"https://github.com/allmobilize/amazeui\">Amaze UI (jQuery 版) v2.4+</a> 共用 CSS</strong>，如果你以前没有接触过 Amaze UI，请先<a href=\"http://amazeui.org/css?_ver=2.x\">点击此查看以下内容</a>：</p>\n<ul>\n<li><a href=\"http://amazeui.org/css/normalize?_ver=2.x\">样式统一</a></li>\n<li><a href=\"http://amazeui.org/css/base?_ver=2.x\">基础设置</a></li>\n<li><a href=\"http://amazeui.org/css/typography?_ver=2.x\">文字排版</a></li>\n</ul>\n<h2 id=\"-amaze-ui-react\">获取 Amaze UI React</h2>\n<h3 id=\"-\">下载</h3>\n<div class=\"am-g\"><div class=\"am-u-md-8 am-u-md-centered\"><a id=\"doc-dl-btn\" href=\"http://amazeui.org/download?branch=react&ver=1.0.0-beta1\" class=\"am-btn am-btn-block am-btn-secondary am-btn-lg\" target=\"_blank\"><i class=\"am-icon-download\"></i> Amaze UI React v1.0.0-beta1</a></div></div>\n\n<h3 id=\"-\">包管理工具</h3>\n<h4 id=\"npm\">NPM</h4>\n<div class=\"doc-highlight\"><pre><code class=\"\">npm <span class=\"hljs-keyword\">install</span> amazeui-react</code></pre></div><h4 id=\"bower\">Bower</h4>\n<div class=\"doc-highlight\"><pre><code class=\"\"><span class=\"hljs-keyword\">bower </span>install amazeui-react</code></pre></div><h3 id=\"cdn\">CDN</h3>\n<div class=\"doc-highlight\"><pre><code class=\"\"><span class=\"hljs-label\">http:</span>//cdn.amazeui<span class=\"hljs-preprocessor\">.org</span>/amazeui-react/1.0.0-beta1/amazeui.react.js\n<span class=\"hljs-label\">http:</span>//cdn.amazeui<span class=\"hljs-preprocessor\">.org</span>/amazeui-react/1.0.0-beta1/amazeui.react.min.js</code></pre></div><h3 id=\"-\">获取源代码</h3>\n<p>Amaze UI React 源代码托管在 GitHub 上，你可以点击下面的按钮获取。为了帮助我们更好的发展，请不吝献出你的 Star。</p>\n<iframe src=\"https://ghbtns.com/github-btn.html?user=amazeui&repo=amazeui-react&type=star&count=true&size=large\" frameborder=\"0\" scrolling=\"0\" width=\"160px\" height=\"30px\"></iframe>\n\n\n<h2 id=\"-\">页面配置</h2>\n<h3 id=\"html-\">HTML 模板</h3>\n<div class=\"doc-highlight\"><pre><code class=\"xml\"><span class=\"hljs-doctype\">&lt;!DOCTYPE html&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">html</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">head</span> <span class=\"hljs-attribute\">lang</span>=<span class=\"hljs-value\">\"zh-cn\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">charset</span>=<span class=\"hljs-value\">\"utf-8\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">http-equiv</span>=<span class=\"hljs-value\">\"X-UA-Compatible\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"IE=edge\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"description\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"keywords\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"viewport\"</span>\n        <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">title</span>&gt;</span>Amaze UI React<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">title</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"renderer\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"webkit\"</span>&gt;</span>\n  <span class=\"hljs-comment\">&lt;!-- No Baidu Siteapp--&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">http-equiv</span>=<span class=\"hljs-value\">\"Cache-Control\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"no-siteapp\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"alternate icon\"</span> <span class=\"hljs-attribute\">type</span>=<span class=\"hljs-value\">\"image/png\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"i/favicon.png\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"apple-touch-icon-precomposed\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"i/app-icon72x72@2x.png\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-title\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"AMUI React\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-capable\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"yes\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">meta</span> <span class=\"hljs-attribute\">name</span>=<span class=\"hljs-value\">\"apple-mobile-web-app-status-bar-style\"</span> <span class=\"hljs-attribute\">content</span>=<span class=\"hljs-value\">\"black\"</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">link</span> <span class=\"hljs-attribute\">rel</span>=<span class=\"hljs-value\">\"stylesheet\"</span> <span class=\"hljs-attribute\">href</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/amazeui/2.4.0/css/amazeui.min.css\"</span>/&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/react/0.13.3/react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n  <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"path/to/amazeui.react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">head</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">body</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">body</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">html</span>&gt;</span></code></pre></div><h3 id=\"-\">组件调用方式</h3>\n<h4 id=\"commonjs\">CommonJS</h4>\n<p>推荐使用 CommonJS 方式开发 React 应用，具体参考 <strong><a href=\"https://github.com/amazeui/react-starter-kit\">Amaze UI React Starter Kit</a></strong></p>\n<div class=\"doc-highlight\"><pre><code class=\"\">npm <span class=\"hljs-keyword\">install</span> amazeui-react</code></pre></div><div class=\"doc-highlight\"><pre><code class=\"javascript\"><span class=\"hljs-keyword\">var</span> React = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'react'</span>);\n<span class=\"hljs-keyword\">var</span> AMUIReact = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'amazeui-react'</span>);\n<span class=\"hljs-keyword\">var</span> Button = AMUIReact.Button;\n\nReact.render(<span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">Button</span>&gt;</span>Button<span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">Button</span>&gt;</span>, mountNode);</span></code></pre></div><h4 id=\"-\">全局方式</h4>\n<div class=\"doc-highlight\"><pre><code class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"http://cdn.amazeui.org/react/0.13.3/react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span> <span class=\"hljs-attribute\">src</span>=<span class=\"hljs-value\">\"path/to/amazeui.react.min.js\"</span>&gt;</span><span class=\"undefined\"></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span>\n<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">script</span>&gt;</span><span class=\"armasm\">\n  var <span class=\"hljs-keyword\">Button </span>= AMUIReact.<span class=\"hljs-keyword\">Button;\n</span></span><span class=\"hljs-tag\">&lt;/<span class=\"hljs-title\">script</span>&gt;</span></code></pre></div><h4 id=\"amd\">AMD</h4>\n<div class=\"doc-highlight\"><pre><code class=\"javascript\">define([<span class=\"hljs-string\">'amazeui-react'</span>], <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">AMUIReact</span>)</span>{\n  <span class=\"hljs-keyword\">var</span> Button = AMUIReact.Button;\n  <span class=\"hljs-comment\">// do...</span>\n});</code></pre></div>";
 },{}],109:[function(require,module,exports){
 // shim for using process in browser
 
@@ -5266,7 +5266,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     setGuttersForLineNumbers(options);
 
     var doc = options.value;
-    if (typeof doc == "string") doc = new Doc(doc, options.mode, null, options.lineSeparator);
+    if (typeof doc == "string") doc = new Doc(doc, options.mode);
     this.doc = doc;
 
     var input = new CodeMirror.inputStyles[options.inputStyle](this);
@@ -5288,7 +5288,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       focused: false,
       suppressEdits: false, // used to disable editing during key handlers when in readOnly mode
       pasteIncoming: false, cutIncoming: false, // help recognize paste/cut edits in input.poll
-      selectingText: false,
       draggingText: false,
       highlight: new Delayed(), // stores highlight worker timeout
       keySeq: null,  // Unfinished key sequence
@@ -5916,7 +5915,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     // width and height.
     removeChildren(display.cursorDiv);
     removeChildren(display.selectionDiv);
-    display.gutters.style.height = display.sizer.style.minHeight = 0;
+    display.gutters.style.height = 0;
 
     if (different) {
       display.lastWrapHeight = update.wrapperHeight;
@@ -6157,22 +6156,12 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       lineView.node.removeChild(lineView.gutter);
       lineView.gutter = null;
     }
-    if (lineView.gutterBackground) {
-      lineView.node.removeChild(lineView.gutterBackground);
-      lineView.gutterBackground = null;
-    }
-    if (lineView.line.gutterClass) {
-      var wrap = ensureLineWrapped(lineView);
-      lineView.gutterBackground = elt("div", null, "CodeMirror-gutter-background " + lineView.line.gutterClass,
-                                      "left: " + (cm.options.fixedGutter ? dims.fixedPos : -dims.gutterTotalWidth) +
-                                      "px; width: " + dims.gutterTotalWidth + "px");
-      wrap.insertBefore(lineView.gutterBackground, lineView.text);
-    }
     var markers = lineView.line.gutterMarkers;
     if (cm.options.lineNumbers || markers) {
       var wrap = ensureLineWrapped(lineView);
       var gutterWrap = lineView.gutter = elt("div", null, "CodeMirror-gutter-wrapper", "left: " +
-                                             (cm.options.fixedGutter ? dims.fixedPos : -dims.gutterTotalWidth) + "px");
+                                             (cm.options.fixedGutter ? dims.fixedPos : -dims.gutterTotalWidth) +
+                                             "px; width: " + dims.gutterTotalWidth + "px");
       cm.display.input.setUneditable(gutterWrap);
       wrap.insertBefore(gutterWrap, lineView.text);
       if (lineView.line.gutterClass)
@@ -6294,18 +6283,13 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     if (!sel) sel = doc.sel;
 
     var paste = cm.state.pasteIncoming || origin == "paste";
-    var textLines = doc.splitLines(inserted), multiPaste = null;
+    var textLines = splitLines(inserted), multiPaste = null;
     // When pasing N lines into N selections, insert one line per selection
     if (paste && sel.ranges.length > 1) {
-      if (lastCopied && lastCopied.join("\n") == inserted) {
-        if (sel.ranges.length % lastCopied.length == 0) {
-          multiPaste = [];
-          for (var i = 0; i < lastCopied.length; i++)
-            multiPaste.push(doc.splitLines(lastCopied[i]));
-        }
-      } else if (textLines.length == sel.ranges.length) {
+      if (lastCopied && lastCopied.join("\n") == inserted)
+        multiPaste = sel.ranges.length % lastCopied.length == 0 && map(lastCopied, splitLines);
+      else if (textLines.length == sel.ranges.length)
         multiPaste = map(textLines, function(l) { return [l]; });
-      }
     }
 
     // Normal behavior is to insert the new text into every selection
@@ -6337,8 +6321,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     var pasted = e.clipboardData && e.clipboardData.getData("text/plain");
     if (pasted) {
       e.preventDefault();
-      if (!isReadOnly(cm) && !cm.options.disableInput)
-        runInOp(cm, function() { applyTextInput(cm, pasted, 0, null, "paste"); });
+      runInOp(cm, function() { applyTextInput(cm, pasted, 0, null, "paste"); });
       return true;
     }
   }
@@ -6606,7 +6589,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       // will be the case when there is a lot of text in the textarea,
       // in which case reading its value would be expensive.
       if (this.contextMenuPending || !cm.state.focused ||
-          (hasSelection(input) && !prevInput && !this.composing) ||
+          (hasSelection(input) && !prevInput) ||
           isReadOnly(cm) || cm.options.disableInput || cm.state.keySeq)
         return false;
 
@@ -6974,7 +6957,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
         var toNode = display.view[toIndex + 1].node.previousSibling;
       }
 
-      var newText = cm.doc.splitLines(domTextBetween(cm, fromNode, toNode, fromLine, toLine));
+      var newText = splitLines(domTextBetween(cm, fromNode, toNode, fromLine, toLine));
       var oldText = getBetween(cm.doc, Pos(fromLine, 0), Pos(toLine, getLine(cm.doc, toLine).text.length));
       while (newText.length > 1 && oldText.length > 1) {
         if (lst(newText) == lst(oldText)) { newText.pop(); oldText.pop(); toLine--; }
@@ -7130,7 +7113,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
   }
 
   function domTextBetween(cm, from, to, fromLine, toLine) {
-    var text = "", closing = false, lineSep = cm.doc.lineSeparator();
+    var text = "", closing = false;
     function recognizeMarker(id) { return function(marker) { return marker.id == id; }; }
     function walk(node) {
       if (node.nodeType == 1) {
@@ -7144,7 +7127,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
         if (markerID) {
           var found = cm.findMarks(Pos(fromLine, 0), Pos(toLine + 1, 0), recognizeMarker(+markerID));
           if (found.length && (range = found[0].find()))
-            text += getBetween(cm.doc, range.from, range.to).join(lineSep);
+            text += getBetween(cm.doc, range.from, range.to).join("\n");
           return;
         }
         if (node.getAttribute("contenteditable") == "false") return;
@@ -7156,7 +7139,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
         var val = node.nodeValue;
         if (!val) return;
         if (closing) {
-          text += lineSep;
+          text += "\n";
           closing = false;
         }
         text += val;
@@ -7473,7 +7456,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       var range = doc.sel.ranges[i];
       var collapsed = range.empty();
       if (collapsed || cm.options.showCursorWhenSelecting)
-        drawSelectionCursor(cm, range.head, curFragment);
+        drawSelectionCursor(cm, range, curFragment);
       if (!collapsed)
         drawSelectionRange(cm, range, selFragment);
     }
@@ -7481,8 +7464,8 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
   }
 
   // Draws a cursor for the given range
-  function drawSelectionCursor(cm, head, output) {
-    var pos = cursorCoords(cm, head, "div", null, null, !cm.options.singleCursorHeightPerLine);
+  function drawSelectionCursor(cm, range, output) {
+    var pos = cursorCoords(cm, range.head, "div", null, null, !cm.options.singleCursorHeightPerLine);
 
     var cursor = output.appendChild(elt("div", "\u00a0", "CodeMirror-cursor"));
     cursor.style.left = pos.left + "px";
@@ -7606,8 +7589,8 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
     doc.iter(doc.frontier, Math.min(doc.first + doc.size, cm.display.viewTo + 500), function(line) {
       if (doc.frontier >= cm.display.viewFrom) { // Visible
-        var oldStyles = line.styles, tooLong = line.text.length > cm.options.maxHighlightLength;
-        var highlighted = highlightLine(cm, line, tooLong ? copyState(doc.mode, state) : state, true);
+        var oldStyles = line.styles;
+        var highlighted = highlightLine(cm, line, state, true);
         line.styles = highlighted.styles;
         var oldCls = line.styleClasses, newCls = highlighted.classes;
         if (newCls) line.styleClasses = newCls;
@@ -7616,10 +7599,9 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
           oldCls != newCls && (!oldCls || !newCls || oldCls.bgClass != newCls.bgClass || oldCls.textClass != newCls.textClass);
         for (var i = 0; !ischange && i < oldStyles.length; ++i) ischange = oldStyles[i] != line.styles[i];
         if (ischange) changedLines.push(doc.frontier);
-        line.stateAfter = tooLong ? state : copyState(doc.mode, state);
+        line.stateAfter = copyState(doc.mode, state);
       } else {
-        if (line.text.length <= cm.options.maxHighlightLength)
-          processLine(cm, line.text, state);
+        processLine(cm, line.text, state);
         line.stateAfter = doc.frontier % 5 == 0 ? copyState(doc.mode, state) : null;
       }
       ++doc.frontier;
@@ -7764,12 +7746,10 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
   function prepareMeasureForLine(cm, line) {
     var lineN = lineNo(line);
     var view = findViewForLine(cm, lineN);
-    if (view && !view.text) {
+    if (view && !view.text)
       view = null;
-    } else if (view && view.changes) {
+    else if (view && view.changes)
       updateLineForChanges(cm, view, lineN, getDimensions(cm));
-      cm.curOp.forceUpdate = true;
-    }
     if (!view)
       view = updateExternalMeasurement(cm, line);
 
@@ -8182,12 +8162,12 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     var callbacks = group.delayedCallbacks, i = 0;
     do {
       for (; i < callbacks.length; i++)
-        callbacks[i].call(null);
+        callbacks[i]();
       for (var j = 0; j < group.ops.length; j++) {
         var op = group.ops[j];
         if (op.cursorActivityHandlers)
           while (op.cursorActivityCalled < op.cursorActivityHandlers.length)
-            op.cursorActivityHandlers[op.cursorActivityCalled++].call(null, op.cm);
+            op.cursorActivityHandlers[op.cursorActivityCalled++](op.cm);
       }
     } while (i < callbacks.length);
   }
@@ -8647,11 +8627,9 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     on(d.wrapper, "scroll", function() { d.wrapper.scrollTop = d.wrapper.scrollLeft = 0; });
 
     d.dragFunctions = {
-      enter: function(e) {if (!signalDOMEvent(cm, e)) e_stop(e);},
-      over: function(e) {if (!signalDOMEvent(cm, e)) { onDragOver(cm, e); e_stop(e); }},
+      simple: function(e) {if (!signalDOMEvent(cm, e)) e_stop(e);},
       start: function(e){onDragStart(cm, e);},
-      drop: operation(cm, onDrop),
-      leave: function() {clearDragCursor(cm);}
+      drop: operation(cm, onDrop)
     };
 
     var inp = d.input.getField();
@@ -8668,9 +8646,8 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       var funcs = cm.display.dragFunctions;
       var toggle = value ? on : off;
       toggle(cm.display.scroller, "dragstart", funcs.start);
-      toggle(cm.display.scroller, "dragenter", funcs.enter);
-      toggle(cm.display.scroller, "dragover", funcs.over);
-      toggle(cm.display.scroller, "dragleave", funcs.leave);
+      toggle(cm.display.scroller, "dragenter", funcs.simple);
+      toggle(cm.display.scroller, "dragover", funcs.simple);
       toggle(cm.display.scroller, "drop", funcs.drop);
     }
   }
@@ -8743,10 +8720,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
     switch (e_button(e)) {
     case 1:
-      // #3261: make sure, that we're not starting a second selection
-      if (cm.state.selectingText)
-        cm.state.selectingText(e);
-      else if (start)
+      if (start)
         leftButtonDown(cm, e, start);
       else if (e_target(e) == display.scroller)
         e_preventDefault(e);
@@ -8866,8 +8840,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       setSelection(doc, normalizeSelection(ranges.concat([ourRange]), ourIndex),
                    {scroll: false, origin: "*mouse"});
     } else if (ranges.length > 1 && ranges[ourIndex].empty() && type == "single" && !e.shiftKey) {
-      setSelection(doc, normalizeSelection(ranges.slice(0, ourIndex).concat(ranges.slice(ourIndex + 1)), 0),
-                   {scroll: false, origin: "*mouse"});
+      setSelection(doc, normalizeSelection(ranges.slice(0, ourIndex).concat(ranges.slice(ourIndex + 1)), 0));
       startSel = doc.sel;
     } else {
       replaceOneSelection(doc, ourIndex, ourRange, sel_mouse);
@@ -8945,7 +8918,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     }
 
     function done(e) {
-      cm.state.selectingText = false;
       counter = Infinity;
       e_preventDefault(e);
       display.input.focus();
@@ -8959,7 +8931,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       else extend(e);
     });
     var up = operation(cm, done);
-    cm.state.selectingText = up;
     on(document, "mousemove", move);
     on(document, "mouseup", up);
   }
@@ -8999,7 +8970,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
   function onDrop(e) {
     var cm = this;
-    clearDragCursor(cm);
     if (signalDOMEvent(cm, e) || eventInWidget(cm.display, e))
       return;
     e_preventDefault(e);
@@ -9016,9 +8986,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
           text[i] = reader.result;
           if (++read == n) {
             pos = clipPos(cm.doc, pos);
-            var change = {from: pos, to: pos,
-                          text: cm.doc.splitLines(text.join(cm.doc.lineSeparator())),
-                          origin: "paste"};
+            var change = {from: pos, to: pos, text: splitLines(text.join("\n")), origin: "paste"};
             makeChange(cm.doc, change);
             setSelectionReplaceHistory(cm.doc, simpleSelection(pos, changeEnd(change)));
           }
@@ -9069,25 +9037,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       }
       e.dataTransfer.setDragImage(img, 0, 0);
       if (presto) img.parentNode.removeChild(img);
-    }
-  }
-
-  function onDragOver(cm, e) {
-    var pos = posFromMouse(cm, e);
-    if (!pos) return;
-    var frag = document.createDocumentFragment();
-    drawSelectionCursor(cm, pos, frag);
-    if (!cm.display.dragCursor) {
-      cm.display.dragCursor = elt("div", null, "CodeMirror-cursors CodeMirror-dragcursors");
-      cm.display.lineSpace.insertBefore(cm.display.dragCursor, cm.display.cursorDiv);
-    }
-    removeChildrenAndAdd(cm.display.dragCursor, frag);
-  }
-
-  function clearDragCursor(cm) {
-    if (cm.display.dragCursor) {
-      cm.display.lineSpace.removeChild(cm.display.dragCursor);
-      cm.display.dragCursor = null;
     }
   }
 
@@ -9720,7 +9669,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
   function replaceRange(doc, code, from, to, origin) {
     if (!to) to = from;
     if (cmp(to, from) < 0) { var tmp = to; to = from; from = tmp; }
-    if (typeof code == "string") code = doc.splitLines(code);
+    if (typeof code == "string") code = splitLines(code);
     makeChange(doc, {from: from, to: to, text: code, origin: origin});
   }
 
@@ -10297,7 +10246,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
     execCommand: function(cmd) {
       if (commands.hasOwnProperty(cmd))
-        return commands[cmd].call(null, this);
+        return commands[cmd](this);
     },
 
     triggerElectric: methodOp(function(text) { triggerElectric(this, text); }),
@@ -10515,22 +10464,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     clearCaches(cm);
     regChange(cm);
   }, true);
-  option("lineSeparator", null, function(cm, val) {
-    cm.doc.lineSep = val;
-    if (!val) return;
-    var newBreaks = [], lineNo = cm.doc.first;
-    cm.doc.iter(function(line) {
-      for (var pos = 0;;) {
-        var found = line.text.indexOf(val, pos);
-        if (found == -1) break;
-        pos = found + val.length;
-        newBreaks.push(Pos(lineNo, found));
-      }
-      lineNo++;
-    });
-    for (var i = newBreaks.length - 1; i >= 0; i--)
-      replaceRange(cm.doc, val, newBreaks[i], Pos(newBreaks[i].line, newBreaks[i].ch + val.length))
-  });
   option("specialChars", /[\t\u0000-\u0019\u00ad\u200b-\u200f\u2028\u2029\ufeff]/g, function(cm, val, old) {
     cm.state.specialChars = new RegExp(val.source + (val.test("\t") ? "" : "|\t"), "g");
     if (old != CodeMirror.Init) cm.refresh();
@@ -10881,8 +10814,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
             } else if (cur.line > cm.doc.first) {
               var prev = getLine(cm.doc, cur.line - 1).text;
               if (prev)
-                cm.replaceRange(line.charAt(0) + cm.doc.lineSeparator() +
-                                prev.charAt(prev.length - 1),
+                cm.replaceRange(line.charAt(0) + "\n" + prev.charAt(prev.length - 1),
                                 Pos(cur.line - 1, prev.length - 1), Pos(cur.line, 1), "+transpose");
             }
           }
@@ -10896,7 +10828,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
         var len = cm.listSelections().length;
         for (var i = 0; i < len; i++) {
           var range = cm.listSelections()[i];
-          cm.replaceRange(cm.doc.lineSeparator(), range.anchor, range.head, "+input");
+          cm.replaceRange("\n", range.anchor, range.head, "+input");
           cm.indentLine(range.from().line + 1, null, true);
           ensureCursorVisible(cm);
         }
@@ -12016,9 +11948,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
   function getLineStyles(cm, line, updateFrontier) {
     if (!line.styles || line.styles[0] != cm.state.modeGen) {
-      var state = getStateBefore(cm, lineNo(line));
-      var result = highlightLine(cm, line, line.text.length > cm.options.maxHighlightLength ? copyState(cm.doc.mode, state) : state);
-      line.stateAfter = state;
+      var result = highlightLine(cm, line, line.stateAfter = getStateBefore(cm, lineNo(line)));
       line.styles = result.styles;
       if (result.classes) line.styleClasses = result.classes;
       else if (line.styleClasses) line.styleClasses = null;
@@ -12035,7 +11965,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     var stream = new StringStream(text, cm.options.tabSize);
     stream.start = stream.pos = startAt || 0;
     if (text == "") callBlankLine(mode, state);
-    while (!stream.eol()) {
+    while (!stream.eol() && stream.pos <= cm.options.maxHighlightLength) {
       readToken(mode, stream, state);
       stream.start = stream.pos;
     }
@@ -12062,7 +11992,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     // is needed on Webkit to be able to get line-level bounding
     // rectangles for it (in measureChar).
     var content = elt("span", null, null, webkit ? "padding-right: .1px" : null);
-    var builder = {pre: elt("pre", [content], "CodeMirror-line"), content: content,
+    var builder = {pre: elt("pre", [content]), content: content,
                    col: 0, pos: 0, cm: cm,
                    splitSpaces: (ie || webkit) && cm.getOption("lineWrapping")};
     lineView.measure = {};
@@ -12152,10 +12082,6 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
           txt.setAttribute("role", "presentation");
           txt.setAttribute("cm-text", "\t");
           builder.col += tabWidth;
-        } else if (m[0] == "\r" || m[0] == "\n") {
-          var txt = content.appendChild(elt("span", m[0] == "\r" ? "␍" : "␤", "cm-invalidchar"));
-          txt.setAttribute("cm-text", m[0]);
-          builder.col += 1;
         } else {
           var txt = builder.cm.options.specialCharPlaceholder(m[0]);
           txt.setAttribute("cm-text", m[0]);
@@ -12501,8 +12427,8 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
   };
 
   var nextDocId = 0;
-  var Doc = CodeMirror.Doc = function(text, mode, firstLine, lineSep) {
-    if (!(this instanceof Doc)) return new Doc(text, mode, firstLine, lineSep);
+  var Doc = CodeMirror.Doc = function(text, mode, firstLine) {
+    if (!(this instanceof Doc)) return new Doc(text, mode, firstLine);
     if (firstLine == null) firstLine = 0;
 
     BranchChunk.call(this, [new LeafChunk([new Line("", null)])]);
@@ -12516,9 +12442,8 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     this.history = new History(null);
     this.id = ++nextDocId;
     this.modeOption = mode;
-    this.lineSep = lineSep;
 
-    if (typeof text == "string") text = this.splitLines(text);
+    if (typeof text == "string") text = splitLines(text);
     updateDoc(this, {from: start, to: start, text: text});
     setSelection(this, simpleSelection(start), sel_dontScroll);
   };
@@ -12548,12 +12473,12 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     getValue: function(lineSep) {
       var lines = getLines(this, this.first, this.first + this.size);
       if (lineSep === false) return lines;
-      return lines.join(lineSep || this.lineSeparator());
+      return lines.join(lineSep || "\n");
     },
     setValue: docMethodOp(function(code) {
       var top = Pos(this.first, 0), last = this.first + this.size - 1;
       makeChange(this, {from: top, to: Pos(last, getLine(this, last).text.length),
-                        text: this.splitLines(code), origin: "setValue", full: true}, true);
+                        text: splitLines(code), origin: "setValue", full: true}, true);
       setSelection(this, simpleSelection(top));
     }),
     replaceRange: function(code, from, to, origin) {
@@ -12564,7 +12489,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     getRange: function(from, to, lineSep) {
       var lines = getBetween(this, clipPos(this, from), clipPos(this, to));
       if (lineSep === false) return lines;
-      return lines.join(lineSep || this.lineSeparator());
+      return lines.join(lineSep || "\n");
     },
 
     getLine: function(line) {var l = this.getLineHandle(line); return l && l.text;},
@@ -12630,13 +12555,13 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
         lines = lines ? lines.concat(sel) : sel;
       }
       if (lineSep === false) return lines;
-      else return lines.join(lineSep || this.lineSeparator());
+      else return lines.join(lineSep || "\n");
     },
     getSelections: function(lineSep) {
       var parts = [], ranges = this.sel.ranges;
       for (var i = 0; i < ranges.length; i++) {
         var sel = getBetween(this, ranges[i].from(), ranges[i].to());
-        if (lineSep !== false) sel = sel.join(lineSep || this.lineSeparator());
+        if (lineSep !== false) sel = sel.join(lineSep || "\n");
         parts[i] = sel;
       }
       return parts;
@@ -12651,7 +12576,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       var changes = [], sel = this.sel;
       for (var i = 0; i < sel.ranges.length; i++) {
         var range = sel.ranges[i];
-        changes[i] = {from: range.from(), to: range.to(), text: this.splitLines(code[i]), origin: origin};
+        changes[i] = {from: range.from(), to: range.to(), text: splitLines(code[i]), origin: origin};
       }
       var newSel = collapse && collapse != "end" && computeReplacedSel(this, changes, collapse);
       for (var i = changes.length - 1; i >= 0; i--)
@@ -12801,8 +12726,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     },
 
     copy: function(copyHistory) {
-      var doc = new Doc(getLines(this, this.first, this.first + this.size),
-                        this.modeOption, this.first, this.lineSep);
+      var doc = new Doc(getLines(this, this.first, this.first + this.size), this.modeOption, this.first);
       doc.scrollTop = this.scrollTop; doc.scrollLeft = this.scrollLeft;
       doc.sel = this.sel;
       doc.extend = false;
@@ -12818,7 +12742,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
       var from = this.first, to = this.first + this.size;
       if (options.from != null && options.from > from) from = options.from;
       if (options.to != null && options.to < to) to = options.to;
-      var copy = new Doc(getLines(this, from, to), options.mode || this.modeOption, from, this.lineSep);
+      var copy = new Doc(getLines(this, from, to), options.mode || this.modeOption, from);
       if (options.sharedHist) copy.history = this.history;
       (this.linked || (this.linked = [])).push({doc: copy, sharedHist: options.sharedHist});
       copy.linked = [{doc: this, isParent: true, sharedHist: options.sharedHist}];
@@ -12847,13 +12771,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     iterLinkedDocs: function(f) {linkedDocs(this, f);},
 
     getMode: function() {return this.mode;},
-    getEditor: function() {return this.cm;},
-
-    splitLines: function(str) {
-      if (this.lineSep) return str.split(this.lineSep);
-      return splitLinesAuto(str);
-    },
-    lineSeparator: function() { return this.lineSep || "\n"; }
+    getEditor: function() {return this.cm;}
   });
 
   // Public alias.
@@ -13552,12 +13470,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
     } while (child = child.parentNode);
   };
 
-  function activeElt() {
-    var activeElement = document.activeElement;
-    while (activeElement && activeElement.root && activeElement.root.activeElement)
-      activeElement = activeElement.root.activeElement;
-    return activeElement;
-  }
+  function activeElt() { return document.activeElement; }
   // Older versions of IE throws unspecified error when touching
   // document.activeElement in some cases (during loading, in iframe)
   if (ie && ie_version < 11) activeElt = function() {
@@ -13659,7 +13572,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
   // See if "".split is the broken IE version, if so, provide an
   // alternative way to split lines.
-  var splitLinesAuto = CodeMirror.splitLines = "\n\nb".split(/\n/).length != 3 ? function(string) {
+  var splitLines = CodeMirror.splitLines = "\n\nb".split(/\n/).length != 3 ? function(string) {
     var pos = 0, result = [], l = string.length;
     while (pos <= l) {
       var nl = string.indexOf("\n", pos);
@@ -14017,7 +13930,7 @@ CodeMirror.runMode = function(string, modespec, callback, options) {
 
   // THE END
 
-  CodeMirror.version = "5.6.0";
+  CodeMirror.version = "5.4.0";
 
   return CodeMirror;
 });
@@ -14061,7 +13974,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
       "for": kw("for"), "switch": kw("switch"), "case": kw("case"), "default": kw("default"),
       "in": operator, "typeof": operator, "instanceof": operator,
       "true": atom, "false": atom, "null": atom, "undefined": atom, "NaN": atom, "Infinity": atom,
-      "this": kw("this"), "class": kw("class"), "super": kw("atom"),
+      "this": kw("this"), "module": kw("module"), "class": kw("class"), "super": kw("atom"),
       "yield": C, "export": kw("export"), "import": kw("import"), "extends": C
     };
 
@@ -14372,6 +14285,7 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     if (type == "default") return cont(expect(":"));
     if (type == "catch") return cont(pushlex("form"), pushcontext, expect("("), funarg, expect(")"),
                                      statement, poplex, popcontext);
+    if (type == "module") return cont(pushlex("form"), pushcontext, afterModule, popcontext, poplex);
     if (type == "class") return cont(pushlex("form"), className, poplex);
     if (type == "export") return cont(pushlex("form"), afterExport, poplex);
     if (type == "import") return cont(pushlex("form"), afterImport, poplex);
@@ -14595,6 +14509,10 @@ CodeMirror.defineMode("javascript", function(config, parserConfig) {
     if (type != "variable") return pass();
     cx.marked = "property";
     return cont();
+  }
+  function afterModule(type, value) {
+    if (type == "string") return cont(statement);
+    if (type == "variable") { register(value); return cont(maybeFrom); }
   }
   function afterExport(_type, value) {
     if (value == "*") { cx.marked = "keyword"; return cont(maybeFrom, expect(";")); }
@@ -14871,16 +14789,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 		mask = fecha.masks[mask] || mask || fecha.masks['default'];
 
-		var D = dateObj.getDate(),
-			d = dateObj.getDay(),
-			M = dateObj.getMonth(),
-			y = dateObj.getFullYear(),
-			H = dateObj.getHours(),
-			m = dateObj.getMinutes(),
-			s = dateObj.getSeconds(),
-			S = dateObj.getMilliseconds(),
-			o = dateObj.getTimezoneOffset(),
-			flags = {
+		var D = dateObj.getDate(), d = dateObj.getDay(), M = dateObj.getMonth(), y = dateObj.getFullYear(), H = dateObj.getHours(), m = dateObj.getMinutes(), s = dateObj.getSeconds(), S = dateObj.getMilliseconds(), o = dateObj.getTimezoneOffset(), flags = {
 				D: D,
 				DD: pad(D),
 				Do: fecha.i18n.DoFn(D),
@@ -14920,28 +14829,19 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 	 * @method parse
 	 * @param {string} dateStr Date string
 	 * @param {string} format Date parse format
-	 * @returns {Date|boolean}
+	 * @returns {Date}
 	 */
 	fecha.parse = function (dateStr, format) {
-		var time, isValid, dateInfo, today, date, info, index;
-
 		if (!format) {
-			time = Date.parse(dateStr.replace(/\-/g, '/'));
-			if (!isNaN(time)) {
-				return new Date(time);
-			} else {
-				return false;
-			}
-
+			return new Date(dateStr.replace(/\-/g, '/'));
 		} else {
 			format = fecha.masks[format] || format;
 
-			isValid = true;
-			dateInfo = {};
+			var isValid = true, dateInfo = {};
 			format.replace(token, function ($0) {
 				if (parseFlags[$0]) {
-					info = parseFlags[$0];
-					index = dateStr.search(info[0]);
+					var info = parseFlags[$0];
+					var index = dateStr.search(info[0]);
 					if (!~index) {
 						isValid = false;
 					} else {
@@ -14961,7 +14861,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 			return false;
 		}
 
-		today = new Date();
+		var today = new Date(), date;
 		if (dateInfo.isPm && dateInfo.hour) {
 			dateInfo.hour = +dateInfo.hour + 12
 		}
@@ -14979,7 +14879,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 	if (typeof module !== 'undefined' && module.exports) {
 		module.exports = fecha;
-	} else if (typeof define === 'function' && define.amd) {
+	} else if (typeof require !== 'undefined' && require.amd) {
 		define(function () {
 			return fecha;
 		});
@@ -15093,8 +14993,8 @@ module.exports = function forIn(o, fn, thisArg) {
 'use strict';
 
 module.exports = function isObject(val) {
-  return val != null && typeof val === 'object'
-    && !Array.isArray(val);
+  return Object.prototype.toString.call(val) === '[object Object]'
+    && typeof val === 'object';
 };
 
 },{}],120:[function(require,module,exports){
@@ -56612,12 +56512,12 @@ TODO:
 },{"./constants":372,"./mixins/ClassNameMixin":373,"classnames":110,"react":313}],342:[function(require,module,exports){
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /**
  * Inputs Components
  * @desc includes input, input-group
  */
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
 var classNames = require('classnames');
@@ -58408,7 +58308,7 @@ var Panel = React.createClass({
       this.props.collapsible ? React.createElement(
         'h4',
         {
-          'data-am-collapse': true, // just for `pointer` style
+          'data-am-collapse': true,
           className: classNames(this.prefixClass('title'), this.isExpanded() ? null : this.setClassNamespace('collapsed')),
           onClick: this.handleClick },
         header
@@ -58519,6 +58419,7 @@ var Panel = React.createClass({
 });
 
 module.exports = Panel;
+// just for `pointer` style
 
 },{"./mixins/ClassNameMixin":373,"./mixins/CollapseMixin":374,"classnames":110,"react":313}],355:[function(require,module,exports){
 'use strict';
@@ -61100,11 +61001,11 @@ module.exports = Topbar;
 },{"./Button":320,"./Icon":340,"./mixins/ClassNameMixin":373,"./utils/createChainedFunction":381,"classnames":110,"object-assign":115,"react":313}],371:[function(require,module,exports){
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 /**
  * Custom radio/checkbox style
  */
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var React = require('react');
 var classNames = require('classnames');

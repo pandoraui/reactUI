@@ -61,7 +61,7 @@ var DocHeader = React.createClass({
             className={'am-collapse am-topbar-collapse' + menuClass} >
             <Nav pills topbar>
               {linkElements}
-              <li><a href="http://amazeui.org" target="_blank">jQuery 版</a></li>
+              <li><a href="./" target="_blank">Zepto.js</a></li>
             </Nav>
           </div>
         </Container>
