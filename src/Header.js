@@ -15,6 +15,7 @@ var Header = React.createClass({
     data: React.PropTypes.object,
     fixed: React.PropTypes.bool,
     title: React.PropTypes.node,
+    subTitle: React.PropTypes.string,
     link: React.PropTypes.string,
     callback: React.PropTypes.func,
     onSelect: React.PropTypes.func
@@ -29,9 +30,10 @@ var Header = React.createClass({
   },
 
   renderTitle: function() {
+    var subTitleClass = this.props.subTitle ? 'subtitle' : '';
     return this.props.title ? (
       <h1
-        className={this.prefixClass('title')}
+        className={this.prefixClass('title ' + subTitleClass)}
         onClick={this.props.onSelect.bind(this, {
           title: this.props.title,
           link: this.props.link
@@ -41,6 +43,11 @@ var Header = React.createClass({
             {this.props.title}
           </a>
         ) : this.props.title}
+        {this.props.subTitle ? (
+          <small className={this.prefixClass(subTitleClass)}>
+            {this.props.subTitle}
+          </small>
+        ) : ''}
       </h1>
     ) : null;
   },
@@ -48,7 +55,8 @@ var Header = React.createClass({
   renderNav: function(position) {
     var data = this.props.data;
     var renderItem = function(item, i) {
-      var callback = item.callback ? item.callback : this.props.onSelect;
+      //这里检测 callback 是否为函数
+      var callback = (typeof item.callback === "function") ? item.callback : this.props.onSelect;
       return (
         <a href={item.link}
            onClick={callback.bind(this, item)}

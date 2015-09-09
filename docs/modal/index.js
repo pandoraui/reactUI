@@ -11,6 +11,7 @@ var examples = {
   confirm: fs.readFileSync(__dirname + '/03-confirm.js', 'utf-8'),
   prompt: fs.readFileSync(__dirname + '/04-prompt.js', 'utf-8'),
   loading: fs.readFileSync(__dirname + '/05-loading.js', 'utf-8'),
+  loadmask: fs.readFileSync(__dirname + '/05-loadmask.js', 'utf-8'),
   actions: fs.readFileSync(__dirname + '/06-actions.js', 'utf-8'),
   popup: fs.readFileSync(__dirname + '/07-popup.js', 'utf-8')
 };
@@ -38,6 +39,9 @@ module.exports = React.createClass({
 
         <h3>Modal Loading</h3>
         <ReactBin code={examples.loading} />
+
+        <h3>Loading Mask 遮罩层</h3>
+        <ReactBin code={examples.loadmask} />
 
         <h3>Actions</h3>
         <ReactBin code={examples.actions} />

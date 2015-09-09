@@ -7,6 +7,7 @@ var Markdown = require('../utils').Markdown;
 var Doc = require('../utils').Doc;
 var examples = {
   default: fs.readFileSync(__dirname + '/01-default.js', 'utf-8'),
+  subTitle: fs.readFileSync(__dirname + '/01-default-subtitle.js', 'utf-8'),
   customIcon: fs.readFileSync(__dirname + '/01-default-customicon.js', 'utf-8'),
   iconText: fs.readFileSync(__dirname + '/01-default-icontext.js', 'utf-8'),
   multIcon: fs.readFileSync(__dirname + '/01-default-multicon.js', 'utf-8')
@@ -24,6 +25,8 @@ module.exports = React.createClass({
         <h3>默认主题</h3>
         <h4>Icon 图标</h4>
         <ReactBin code={examples.default} />
+        <h4>副标题</h4>
+        <ReactBin code={examples.subTitle} />
         <h4>图片图标</h4>
         <ReactBin code={examples.customIcon} />
         <h4>图标 + 文字</h4>

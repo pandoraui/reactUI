@@ -13,8 +13,7 @@ var Modal = React.createClass({
 
   propTypes: {
     classPrefix: React.PropTypes.string.isRequired,
-    type: React.PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading',
-      'actions', 'popup']),
+    type: React.PropTypes.oneOf(['alert', 'confirm', 'prompt', 'loading', 'loadmask', 'actions', 'popup']),
     title: React.PropTypes.node,
     confirmText: React.PropTypes.string,
     cancelText: React.PropTypes.string,
@@ -234,11 +233,12 @@ var Modal = React.createClass({
         title={null}
         className={classNames(classSet, props.className)}>
         <div className={this.prefixClass('dialog')}>
-          {this.renderHeader()}
+          {props.type !== 'loadmask' ? this.renderHeader() : function(){} }
           <div className={this.prefixClass('bd')} ref="modalBody">
-            {props.type === 'loading' ?
+
+            {props.type === 'loadmask' ? <Icon icon="spinner" spin /> : (props.type === 'loading' ?
               (props.children ? props.children : <Icon icon="spinner" spin />) :
-              props.children}
+              props.children) }
           </div>
           {footer}
         </div>

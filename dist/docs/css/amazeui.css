@@ -1,4 +1,4 @@
-/*! Amaze UI v2.4.2 | by Amaze UI Team | (c) 2015 AllMobilize, Inc. | Licensed under MIT | 2015-07-06T10:25:45+0800 */
+/*! React UI v1.0.0-beta1 | by Amaze UI Team | (c) 2015 AllMobilize, Inc. | Licensed under MIT | 2015-09-09T18:26:59+0800 */
 /* ==========================================================================
    Component: Base
  ============================================================================ */
@@ -603,7 +603,7 @@ select {
  * http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
  * http://msdn.microsoft.com/en-us/library/ie/hh869615%28v=vs.85%29.aspx
  * http://msdn.microsoft.com/zh-cn/library/ie/hh708740(v=vs.85).aspx
- * @2014.01.20: 设置一下属性以后，windows Phone 8 上显示的字体过小，暂时注释掉
+ * @2014.01.20: 设置以下属性以后，windows Phone 8 上显示的字体过小，暂时注释掉
  * ========================================================================== */
 /*
 @-ms-viewport {
@@ -3203,7 +3203,6 @@ fieldset[disabled] .am-checkbox-inline {
     border-left: 7px solid transparent;
     border-top: 0 dotted;
     -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
             transform: rotate(360deg);
     opacity: 0;
     -webkit-transition: opacity .1s;
@@ -4576,7 +4575,6 @@ a.am-close:hover {
 }
 .am-close-spin:hover {
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 /* ==========================================================================
@@ -4595,6 +4593,7 @@ a.am-close:hover {
 ============================================================================= */
 [class*="am-icon-"] {
   display: inline-block;
+  font-style: normal;
 }
 [class*="am-icon-"]:before {
   display: inline-block;
@@ -4608,7 +4607,6 @@ a.am-close:hover {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 .am-icon-border {
@@ -8464,7 +8462,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   width: 100%;
   color: #333333;
@@ -8526,7 +8523,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   font-size: 20px;
   display: inline-block;
@@ -8621,10 +8617,14 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   text-align: center;
   border-radius: 0;
   opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0) scale(1.185);
-          transform: translate3d(0, 0, 0) scale(1.185);
+  -webkit-transform: scale(1.185);
+          transform: scale(1.185);
   -webkit-transition-property: -webkit-transform, opacity;
           transition-property: transform, opacity;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
   /*@media @large-up {
     width: @modal-lg;
     margin-left: -@modal-lg/2;
@@ -8637,16 +8637,16 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   opacity: 1;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  -webkit-transform: translate3d(0, 0, 0) scale(1);
-          transform: translate3d(0, 0, 0) scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 .am-modal.am-modal-out {
   opacity: 0;
   z-index: 1109;
   -webkit-transition-duration: 300ms;
           transition-duration: 300ms;
-  -webkit-transform: translate3d(0, 0, 0) scale(0.815);
-          transform: translate3d(0, 0, 0) scale(0.815);
+  -webkit-transform: scale(0.815);
+          transform: scale(0.815);
 }
 @media only screen and (min-width:641px) {
   .am-modal {
@@ -8762,6 +8762,13 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 .am-modal-loading .am-modal-footer {
   display: none;
 }
+.am-modal-loadmask .am-modal-dialog {
+  background: none;
+}
+.am-modal-loadmask .am-icon-spin {
+  color: #ffffff;
+  font-size: 4rem;
+}
 .am-modal-actions {
   position: fixed;
   left: 0;
@@ -8771,20 +8778,17 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   text-align: center;
   border-radius: 0;
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition: -webkit-transform 300ms;
           transition: transform 300ms;
 }
 .am-modal-actions.am-modal-active {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 .am-modal-actions.am-modal-out {
   z-index: 1109;
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
 }
 .am-modal-actions-group {
@@ -8849,7 +8853,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-transition-property: -webkit-transform;
           transition-property: transform;
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
 }
 .am-popup.am-modal-active,
@@ -8859,12 +8862,10 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 }
 .am-popup.am-modal-active {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 .am-popup.am-modal-out {
   -webkit-transform: translateY(100%);
-      -ms-transform: translateY(100%);
           transform: translateY(100%);
 }
 @media all and (min-width: 630px) and (min-height: 630px) {
@@ -8876,17 +8877,14 @@ ul.am-dropdown-content > .am-disabled > a:focus {
     margin-left: -315px;
     margin-top: -315px;
     -webkit-transform: translateY(1024px);
-        -ms-transform: translateY(1024px);
             transform: translateY(1024px);
   }
   .am-popup.am-modal-active {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
             transform: translateY(0);
   }
   .am-popup.am-modal-out {
     -webkit-transform: translateY(1024px);
-        -ms-transform: translateY(1024px);
             transform: translateY(1024px);
   }
 }
@@ -8897,7 +8895,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-overflow-scrolling: touch;
 }
 .am-popup-hd {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   height: 43px;
@@ -8929,7 +8927,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 }
 .am-popup-hd .am-close:hover {
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   color: #555555;
 }
@@ -8986,7 +8983,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out;
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 .am-offcanvas-bar:after {
@@ -9001,7 +8997,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 }
 .am-offcanvas.am-active .am-offcanvas-bar.am-offcanvas-bar-active {
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 /* .@{ns}offcanvas-bar-flip */
@@ -9009,7 +9004,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   left: auto;
   right: 0;
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%);
 }
 .am-offcanvas-bar-flip:after {
@@ -9065,7 +9059,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   border-left: 8px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   overflow: hidden;
 }
@@ -9073,7 +9066,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   top: auto;
   bottom: -8px;
   -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 .am-popover-bottom .am-popover-caret {
@@ -9089,14 +9081,12 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   left: auto;
   right: -12px;
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 .am-popover-right .am-popover-caret {
   right: auto;
   left: -12px;
   -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 .am-popover-left .am-popover-caret,
@@ -9185,7 +9175,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
           box-shadow: 0 0 10px #5eb95e, 0 0 5px #5eb95e;
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
-      -ms-transform: rotate(3deg) translate(0px, -4px);
           transform: rotate(3deg) translate(0px, -4px);
 }
 #nprogress .nprogress-spinner {
@@ -9250,7 +9239,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-transition: -webkit-transform 0.3s;
           transition: transform 0.3s;
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 .am-tabs-bd .am-tab-panel * {
@@ -9261,12 +9249,10 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   z-index: 100;
   visibility: visible;
   -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
           transform: translateX(0);
 }
 .am-tabs-bd .am-tab-panel.am-active ~ .am-tab-panel {
   -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
           transform: translateX(100%);
 }
 .am-tabs-bd .am-tabs-bd {
@@ -9404,12 +9390,10 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-transition: -webkit-transform .3s;
           transition: transform .3s;
   -webkit-transform: translate(0, 100%);
-      -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);
 }
 .am-pureview.am-active {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 .am-pureview ul,
@@ -9448,13 +9432,11 @@ ul.am-dropdown-content > .am-disabled > a:focus {
 }
 .am-pureview-slider li.am-pureview-slide-prev {
   -webkit-transform: translate(-100%, 0);
-      -ms-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
   z-index: 109;
 }
 .am-pureview-slider li.am-pureview-slide-next {
   -webkit-transform: translate(100%, 0);
-      -ms-transform: translate(100%, 0);
           transform: translate(100%, 0);
   z-index: 109;
 }
@@ -9462,7 +9444,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   position: relative;
   z-index: 110;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   visibility: visible;
 }
@@ -9498,7 +9479,6 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f110";
   -webkit-animation: icon-spin 2s infinite linear;
@@ -9836,8 +9816,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   left: 50%;
   margin-left: -1em;
   -webkit-transform: scaleX(0.9) rotate(45deg);
-  -ms-transform: scaleX(0.9) rotate(45deg);
-      transform: scaleX(0.9) rotate(45deg);
+  transform: scaleX(0.9) rotate(45deg);
   -webkit-box-shadow: 0.2em 0.2em 0 #d1d1d1;
           box-shadow: 0.2em 0.2em 0 #d1d1d1;
 }
@@ -9851,8 +9830,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   left: 50%;
   margin-left: -1em;
   -webkit-transform: scaleX(0.9) rotate(45deg);
-  -ms-transform: scaleX(0.9) rotate(45deg);
-      transform: scaleX(0.9) rotate(45deg);
+  transform: scaleX(0.9) rotate(45deg);
   z-index: 2147483641;
 }
 .ath-application-icon {
@@ -9965,7 +9943,6 @@ label.am-radio {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 .am-checkbox .am-icon-checked,
@@ -10278,7 +10255,6 @@ tbody.am-collapse.am-in {
   position: fixed !important;
   z-index: 1010;
   -webkit-transform-origin: 0 0;
-      -ms-transform-origin: 0 0;
           transform-origin: 0 0;
 }
 [data-am-sticky][class*="am-animation-"] {
@@ -10405,7 +10381,6 @@ tbody.am-collapse.am-in {
   border-left: 7px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   position: absolute;
   top: -7px;
@@ -10427,7 +10402,6 @@ tbody.am-collapse.am-in {
   border-left: 7px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 .am-datepicker-select {
@@ -10472,7 +10446,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
 }
@@ -10488,7 +10461,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f054";
 }
@@ -10851,12 +10823,10 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   -webkit-transition: -webkit-transform .2s ease;
           transition: transform .2s ease;
   -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
           transform: rotate(0deg);
   margin-right: 5px;
 }
@@ -10872,7 +10842,6 @@ tbody.am-collapse.am-in {
 }
 .am-accordion-default .am-active .am-accordion-title:before {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 /**
@@ -10900,13 +10869,11 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f0da";
   -webkit-transition: -webkit-transform .2s ease;
           transition: transform .2s ease;
   -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
           transform: rotate(0deg);
   margin-right: .5rem;
 }
@@ -10918,7 +10885,6 @@ tbody.am-collapse.am-in {
 }
 .am-accordion-basic .am-active .am-accordion-title:before {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 /**
@@ -10956,7 +10922,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f105";
   -webkit-transition: -webkit-transform .2s linear;
@@ -10978,7 +10943,6 @@ tbody.am-collapse.am-in {
 }
 .am-accordion-gapped .am-active .am-accordion-title:after {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 /**
@@ -11012,7 +10976,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f105";
   -webkit-transition: -webkit-transform .2s linear;
@@ -11034,7 +10997,6 @@ tbody.am-collapse.am-in {
 }
 .am-accordion-one .am-active .am-accordion-title:after {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 .am-divider {
@@ -11087,7 +11049,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f00e";
   position: absolute;
@@ -11528,7 +11489,7 @@ tbody.am-collapse.am-in {
   margin-bottom: 0;
 }
 .am-header .am-header-title {
-  margin: 0 30%;
+  margin: 0 25%;
   font-size: 2rem;
   font-weight: normal;
   text-align: center;
@@ -11554,10 +11515,10 @@ tbody.am-collapse.am-in {
   vertical-align: middle;
 }
 .am-header .am-header-left {
-  left: 10px;
+  left: 5px;
 }
 .am-header .am-header-right {
-  right: 10px;
+  right: 5px;
 }
 .am-header-fixed {
   position: fixed;
@@ -11590,12 +11551,12 @@ tbody.am-collapse.am-in {
 }
 .am-header-default .am-header-nav > a {
   display: inline-block;
-  min-width: 36px;
+  min-width: 40px;
   text-align: center;
   color: #eeeeee;
 }
 .am-header-default .am-header-nav > a + a {
-  margin-left: 5px;
+  margin-left: 1px;
 }
 .am-header-default .am-header-nav .am-btn {
   margin-top: 9px;
@@ -12204,7 +12165,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 .am-menu-sub {
@@ -12277,7 +12237,6 @@ tbody.am-collapse.am-in {
 }
 .am-menu-default .am-menu-nav > .am-parent.am-open > a:after {
   -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 .am-menu-default .am-menu-sub {
@@ -12400,7 +12359,6 @@ tbody.am-collapse.am-in {
   border-left: 8px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   position: absolute;
   top: 100%;
@@ -12484,7 +12442,6 @@ tbody.am-collapse.am-in {
 .am-menu-dropdown2 .am-menu-nav > li.am-parent.am-open > a:after {
   color: #0e90d2;
   -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 .am-menu-dropdown2 .am-menu-nav > li.am-parent.am-open > a:before {
@@ -12576,7 +12533,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f0d8";
   font-size: 24px;
@@ -12631,7 +12587,6 @@ tbody.am-collapse.am-in {
 }
 .am-menu-slide1 .am-menu-nav > .am-parent.am-open > a:after {
   -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 .am-menu-slide1 .am-menu-sub {
@@ -12813,7 +12768,6 @@ tbody.am-collapse.am-in {
 }
 .am-menu-stack .am-menu-nav > .am-parent.am-open > a:after {
   -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 .am-menu-stack .am-menu-nav > li > a {
@@ -12960,7 +12914,6 @@ tbody.am-collapse.am-in {
   border-left: 6px solid transparent;
   border-top: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
 }
 .am-menu-one .am-menu-nav-sub-wrap {
@@ -13074,13 +13027,11 @@ tbody.am-collapse.am-in {
   -webkit-transition: .3s;
           transition: .3s;
   -webkit-transform: translate(0, 100%);
-      -ms-transform: translate(0, 100%);
           transform: translate(0, 100%);
 }
 .am-navbar-actions.am-active {
   opacity: 1;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 .am-navbar-actions li {
@@ -13676,7 +13627,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 24px;
@@ -13767,7 +13717,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 16px;
@@ -13851,7 +13800,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 24px;
@@ -13938,7 +13886,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 20px;
@@ -14185,7 +14132,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 16px;
@@ -14287,7 +14233,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 24px;
@@ -14393,7 +14338,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   content: "\f053";
   font-size: 16px;
@@ -14605,7 +14549,6 @@ tbody.am-collapse.am-in {
   border-left: 8px solid transparent;
   border-bottom: 0 dotted;
   -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
           transform: rotate(360deg);
   margin-left: -4px;
   -webkit-transition: all 0.2s;
@@ -14685,7 +14628,6 @@ tbody.am-collapse.am-in {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   color: rgba(0, 0, 0, 0.7);
   content: "\f053";

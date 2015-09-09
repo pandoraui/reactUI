@@ -23,6 +23,55 @@ var $ = require('gulp-load-plugins')();
 
 var qnConfig = require('./qn.json')
 
+var config = {
+  path: {
+    less: [
+      './less/amazeui.less',
+      './less/themes/flat/amazeui.flat.less'
+    ],
+    fonts: './fonts/*',
+    widgets: [
+      '*/src/*.js',
+      '!{layout*,blank,container}' +
+      '/src/*.js'],
+    hbsHelper: [
+      'vendor/amazeui.hbs.helper.js',
+      'vendor/amazeui.hbs.partials.js'],
+    buildTmp: '.build/temp/'
+  },
+  dist: {
+    js: './dist/js',
+    css: './dist/docs/css',
+    fonts: './dist/fonts'
+  },
+  js: {
+    base: [
+      'core.js',
+      'util.hammer.js'
+    ]
+  },
+
+  AUTOPREFIXER_BROWSERS: [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 2.3',
+    'bb >= 10'
+  ],
+  uglify: {
+    compress: {
+      warnings: false
+    },
+    output: {
+      ascii_only: true
+    }
+  }
+};
+
 var paths = {
   src: {
     docs: {
@@ -75,6 +124,47 @@ gulp.task('build', function() {
     .pipe($.header(banner, {pkg: pkg}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest(paths.dist.build))
+    .pipe($.size({showFiles: true, title: 'minified'}))
+    .pipe($.size({showFiles: true, gzip: true, title: 'gzipped'}));
+});
+
+// Build to dist dir.
+gulp.task('build:less', function() {
+  gulp.src(config.path.less)
+    .pipe($.header(banner, {pkg: pkg, ver: ''}))
+    .pipe($.plumber({errorHandler: function (err) {
+      // 处理编译less错误提示  防止错误之后gulp任务直接中断
+      // $.notify.onError({
+      //           title:    "编译错误",
+      //           message:  "错误信息: <%= error.message %>",
+      //           sound:    "Bottle"
+      //       })(err);
+      console.log(err);
+      this.emit('end');
+    }}))
+    .pipe($.less({
+      paths: [
+          path.join(__dirname, 'less'),
+          path.join(__dirname, 'widget/*/src')
+        ]
+    }))
+    .pipe($.rename(function(path) {
+      if (path.basename === 'amui') {
+        path.basename = pkg.name + '.basic';
+      }
+    }))
+    .pipe($.autoprefixer({browsers: config.AUTOPREFIXER_BROWSERS}))
+    .pipe($.replace('//dn-amui.qbox.me/font-awesome/4.3.0/', '../'))
+    .pipe(gulp.dest(config.dist.css))
+    .pipe($.size({showFiles: true, title: 'source'}))
+    // Disable advanced optimizations - selector & property merging, etc.
+    // for Issue #19 https://github.com/allmobilize/amazeui/issues/19
+    .pipe($.minifyCss({noAdvanced: true}))
+    .pipe($.rename({
+      suffix: '.min',
+      extname: '.css'
+    }))
+    .pipe(gulp.dest(config.dist.css))
     .pipe($.size({showFiles: true, title: 'minified'}))
     .pipe($.size({showFiles: true, gzip: true, title: 'gzipped'}));
 });
@@ -138,7 +228,12 @@ gulp.task('docs:js', docBundle);
 b.on('update', docBundle).on('log', $.util.log); // output build logs
 
 gulp.task('docs:copy:ui', function() {
-  return gulp.src(['node_modules/amazeui/dist/**/*', '!**/*js', '!**/*flat*'])
+  return gulp.src([
+      'node_modules/amazeui/dist/**/*',
+      '!**/*css',
+      '!**/*js',
+      '!**/*flat*'
+    ])
     .pipe(gulp.dest(paths.dist.docs));
 });
 
@@ -178,7 +273,7 @@ gulp.task('docs:clean', function(cb){
   ], cb);
 });
 
-gulp.task('docs', ['docs:less', 'docs:js', 'docs:copy']);
+gulp.task('docs', ['build:less', 'docs:less', 'docs:js', 'docs:copy']);
 
 // upload docs assets to Qiniu
 gulp.task('docs:qn', function() {
@@ -218,6 +313,7 @@ gulp.task('serve', function() {
     }
   });
 
+  gulp.watch(['less/**/*.less', 'widget/*/src/*.less'], ['build:less']);
   gulp.watch('docs/**/*.less', ['docs:less']);
   gulp.watch(paths.src.docs.i, ['docs:copy:i']);
   gulp.watch(paths.src.docs.html, ['docs:copy:html']);

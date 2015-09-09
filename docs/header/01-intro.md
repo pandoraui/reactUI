@@ -3,8 +3,9 @@
 属性：
 
 - `theme`: `string` - 主题名称
-- `data`: `array` - 左右厕链接数据
+- `data`: `array` - 左右侧链接数据
 - `title`: `string` - 标题
+- `subTitle`: `string` - 副标题
 - `link`: `string` - 链接
 - `onSelect`: `func` - 链接点击处理函数，默认为 `function(){}`，接受两个参数：
 
@@ -24,6 +25,7 @@ var data = {
     {
       "link": "",         // url : http://xxx.xxx.xxx
       "title": "",        // 链接标题
+      "callback": null,   // 对应的点击回调，默认为 null
       "icon": "",         // 字体图标名称: 使用 Amaze UI 字体图标 http://www.amazeui.org/css/icon
       "customIcon": ""    // 自定义图标 URL，设置此项后当前链接不再显示 icon
     }
@@ -34,7 +36,8 @@ var data = {
       "link": "",
       "title": "",
       "icon": "",
-      "customIcon": ""
+      "customIcon": "",
+      "callback": null    //function (nav, e) {}
     }
   ]
 };
