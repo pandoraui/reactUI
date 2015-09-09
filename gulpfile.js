@@ -8,6 +8,8 @@ var buffer = require('vinyl-buffer');
 var del = require('del');
 var runSequence = require('run-sequence');
 
+var webpack = require('webpack-stream');
+
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -18,6 +20,8 @@ var markedify = require('markedify');
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+
+var qnConfig = require('./qn.json')
 
 var paths = {
   src: {
@@ -55,6 +59,7 @@ gulp.task('build', function() {
     entries: [paths.src.build],
     standalone: 'AMUIReact'
   }).transform('browserify-shim', {global: true}) // put shim first!
+
     .transform('babelify')
     .plugin(collapser)
     .plugin('browserify-derequire')
@@ -62,11 +67,13 @@ gulp.task('build', function() {
     .on('error', handleError)
     .pipe(source('amazeui.react.js'))
     .pipe(buffer())
+    .pipe($.sourcemaps.init())
     .pipe($.header(banner, {pkg: pkg}))
     .pipe(gulp.dest(paths.dist.build))
     .pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.header(banner, {pkg: pkg}))
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest(paths.dist.build))
     .pipe($.size({showFiles: true, title: 'minified'}))
     .pipe($.size({showFiles: true, gzip: true, title: 'gzipped'}));
@@ -89,7 +96,7 @@ var b = watchify(browserify({
   cache: {},
   packageCache: {},
   entries: ['./docs/app.js'],
-  // debug: true,
+  debug: !isProduction,
   noParse: ['./node_modules/babel-core/browser.js'],
   extensions: ['.md'],
   transform: [markedify, 'babelify', 'brfs', 'envify']
@@ -111,6 +118,7 @@ var docBundle = function() {
       }))
   );
 
+  console.log('是否生产环境：' + isProduction);
   return !isProduction ? s : s.pipe($.uglify())
     .pipe($.rename({suffix: '.min'}))
     .pipe($.header(buildBanner))
@@ -163,6 +171,13 @@ gulp.task('docs:copy:i', function() {
 
 gulp.task('docs:copy', ['docs:copy:ui', 'docs:copy:html', 'docs:copy:i']);
 
+gulp.task('docs:clean', function(cb){
+  del([
+    paths.dist.lib,
+    paths.dist.build
+  ], cb);
+});
+
 gulp.task('docs', ['docs:less', 'docs:js', 'docs:copy']);
 
 // upload docs assets to Qiniu
@@ -179,8 +194,23 @@ gulp.task('docs:qn', function() {
     }));
 });
 
-gulp.task('dev', ['docs'], function() {
+gulp.task('dev', ['docs'], function(cb) {
+  runSequence(
+    'serve',
+    cb
+  );
+});
+
+gulp.task('serve', function() {
   browserSync({
+    // port: 5000, //默认3000
+    // ui: {    //更改默认端口weinre 3001
+    //     port: 5001,
+    //     weinre: {
+    //         port: 9090
+    //     }
+    // },
+    open: "external", //local 
     notify: false,
     logPrefix: 'AMR',
     server: {
@@ -193,6 +223,11 @@ gulp.task('dev', ['docs'], function() {
   gulp.watch(paths.src.docs.html, ['docs:copy:html']);
   gulp.watch(['dist/**/*'], reload);
 });
+
+gulp.task('watch', function() {
+  gulp.watch('src/**/*.js', ['build']);
+});
+
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.js', ['build']);
@@ -307,3 +342,44 @@ gulp.task('examples', function() {
 });
 
 gulp.task('default', ['dev', 'build', 'watch']);
+
+
+
+
+// server
+gulp.task('server', function(callback) {
+  $.nodemon({
+    script: './server.js',
+    env: {
+      NODE_ENV: 'production'
+    },
+    stdout: false
+  }).on('readable', function() {
+    this.stdout
+      .pipe(bistre({time: true}))
+      .pipe(process.stdout);
+    this.stderr
+      .pipe(bistre({time: true}))
+      .pipe(process.stderr);
+  });
+  callback();
+});
+
+var bistre = require('bistre');
+gulp.task('app', function(callback) {
+  $.nodemon({
+    script: 'server/app.js',
+    env: {
+      NODE_ENV: 'development'
+    },
+    stdout: false
+  }).on('readable', function() {
+    this.stdout
+      .pipe(bistre({time: true}))
+      .pipe(process.stdout);
+    this.stderr
+      .pipe(bistre({time: true}))
+      .pipe(process.stderr);
+  });
+  callback();
+});

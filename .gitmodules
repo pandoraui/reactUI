@@ -1,0 +1,6 @@
+#[submodule "starter"]
+#	path = starter
+#	url = https://github.com/pandoraui/react-starter-kit.git
+#[submodule "gulp-tasks"]
+#  path = gulp
+#  url = https://github.com/pandoraui/gulp-tasks.git

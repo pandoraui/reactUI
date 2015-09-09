@@ -44,8 +44,8 @@ var DocHeader = React.createClass({
           <h1 className="am-topbar-brand">
             <a
               href="./"
-              className="am-text-ir">
-              Amaze UI React
+              className="am-text">
+              ReactUI　　&nbsp;
             </a>
             <Badge amStyle="warning">React</Badge>
           </h1>

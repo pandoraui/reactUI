@@ -117,11 +117,11 @@ var PageComponents = React.createClass({
           基于 React.js 封装的 Web 组件
         </Banner>
         <Grid fixed className="amr-content">
-          <Col sm={12} md={9}>
-            <RouteHandler />
-          </Col>
           <Col sm={12} md={3}>
             {this.renderNavs()}
+          </Col>
+          <Col sm={12} md={9}>
+            <RouteHandler />
           </Col>
         </Grid>
       </DocMain>

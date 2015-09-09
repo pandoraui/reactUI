@@ -1,0 +1,94 @@
+'use strict';
+
+var express = require('express');
+//var format = require('util').format;
+//var hbs = require('hbs');
+//var lib = require('../lib');
+//var _path = require('path');
+var router = express.Router();
+//var routes = require('routes.json');
+//var componentsData = lib.components;
+
+/* GET home page. */
+
+router.get('/*', function(req, res) {
+  var env;
+  if( /debug=1/.test(req.path) ){
+    env = 'develop';
+  }
+  console.log(req.path)
+  res.render('index.html', {
+    assets: '',
+    env: env,
+    title: 'HTML5 前端框架',
+    version: '2.x',
+    publishVersion: 'ibrc8418',
+    staticDomain: 'http://s.amazeui.org',
+    //components: componentsData,
+    //componentsData: JSON.stringify(componentsData),
+    header: {
+      content: {
+        title: 'Amaze UI'
+      }
+    }
+  });
+});
+
+// router.get('/:component', function(req, res) {
+//   var component = req.params.component;
+//   res.redirect('/#' + component);
+// });
+
+// router.get('/:component/:theme', function(req, res) {
+//   var component = req.params.component;
+//   res.redirect('/#' + component);
+// });
+
+// router.get('/:component/:theme/:id', function(req, res) {
+//   var params = req.params;
+//   var component = params.component;
+//   var theme = params.theme;
+//   var id = params.id;
+//   var demoIndex = -1;
+//   var reqCpt = componentsData[component];
+
+//   if (!reqCpt) {
+//     return res.status(404).render('error', {
+//       message: '组件不存在！',
+//       error: {}
+//     });
+//   }
+
+//   reqCpt.demos.forEach(function(item, index) {
+//     if (item.url == format('%s/%s/%s', component, theme, id)) {
+//       demoIndex = index;
+//     }
+//   });
+
+//   if (demoIndex < 0) {
+//     return res.send('数据不存在！');
+//   }
+
+//   var demoData = reqCpt.demos[demoIndex];
+//   var demoCompiler = hbs.handlebars.compile(reqCpt.tpl);
+
+//   res.render('index', {
+//     demoDetail: 1,
+//     title: format('%s - %s | Amaze UI Components Demo',
+//         reqCpt.localName.en, demoData.title),
+//     components: componentsData,
+//     componentsData: JSON.stringify(componentsData),
+//     header: {
+//       content: {
+//         left: [{
+//           link: '/',
+//           icon: 'home'
+//         }],
+//         title: demoData.title
+//       }
+//     },
+//     content: demoCompiler(demoData.data)
+//   });
+// });
+
+module.exports = router;

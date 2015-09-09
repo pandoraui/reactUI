@@ -16,6 +16,7 @@ var Header = React.createClass({
     fixed: React.PropTypes.bool,
     title: React.PropTypes.node,
     link: React.PropTypes.string,
+    callback: React.PropTypes.func,
     onSelect: React.PropTypes.func
   },
 
@@ -47,9 +48,10 @@ var Header = React.createClass({
   renderNav: function(position) {
     var data = this.props.data;
     var renderItem = function(item, i) {
+      var callback = item.callback ? item.callback : this.props.onSelect;
       return (
         <a href={item.link}
-           onClick={this.props.onSelect.bind(this, item)}
+           onClick={callback.bind(this, item)}
            key={'headerNavItem' + i}>
           {item.title ? (
             <span className={this.prefixClass('nav-title')}>
